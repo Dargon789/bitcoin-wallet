@@ -111,7 +111,8 @@ public final class Constants {
     public static final HttpUrl VERSION_URL = HttpUrl.parse("https://wallet.schildbach.de/version"
             + (NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "" : "-test"));
     /** URL to fetch dynamic fees from. */
-    public static final HttpUrl DYNAMIC_FEES_URL = HttpUrl.parse("https://wallet.schildbach.de/fees");
+    public static final HttpUrl DYNAMIC_FEES_URL = HttpUrl.parse("https://wallet.schildbach.de/fees"
+            + (NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "" : "-test"));
 
     /** MIME type used for transmitting single transactions. */
     public static final String MIMETYPE_TRANSACTION = "application/x-btctx";
@@ -187,7 +188,7 @@ public final class Constants {
     public static final Coin TOO_MUCH_BALANCE_THRESHOLD = Coin.COIN.divide(32);
     /** A balance above this amount will cause the donate option to be shown */
     public static final Coin SOME_BALANCE_THRESHOLD = Coin.COIN.divide(1600);
-    /** Values less than this are considered not spendable in an economic way */
+    /** Values less than this are considered not spendable in an economical way */
     public static final Coin MIN_NONDUST = Coin.valueOf(546); // satoshis
 
     public static final int SDK_DEPRECATED_BELOW = Build.VERSION_CODES.P;
